@@ -2,11 +2,14 @@
 Taking shots of color checker and create LUT based on pairs of tif image to match color of two cameras. I used this to match my Nikon Z6iii to Hasselbald 907x 50c.
 
 # Usage
+
 ```python
 python generate.py <base_folder_path> <method_flag> <display_patch>
 ```
 
-To run a single method, use one of the following flags (default is --standard):
+The base folder must contain two subfolders, "nikon" and "hasselblad", each containing calibration images (.tif and/or .TIF).
+
+For method_flag, use one of the following flags (default is --standard):
     
     --standard   : Global linear transformation using Colour's matrix_colour_correction.
                    (Computes a 3x3 matrix mapping Nikon patches to Hasselblad patches.)
@@ -30,12 +33,12 @@ To run a single method, use one of the following flags (default is --standard):
                    (Uses L2 regularization for stability.)
     --compare    : Compare all methods and view their R² values, exposure gains, and previews.              
                    
-  Additionally, add the flag:
+  For display_path, use the flag (default is display patches):
   
     --no-display-patches : Do not display the color patch images (color checker detection).
                            Only the final corrected result will be shown (such as the result image below).
 
-The base folder must contain two subfolders, "nikon" and "hasselblad", each containing calibration images (.tif and/or .TIF).
+
 
 # Result
 
