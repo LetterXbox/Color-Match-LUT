@@ -1,7 +1,7 @@
 # Color-Match-LUT
 Take shots of color checker and create LUT based on pairs of tif image to match color of two cameras. I used this to match my Nikon Z6iii to Hasselbald 907x 50c.
 
-# Usage
+## Usage
 
 ```python
 python generate.py <base_folder_path> <method_flag> <display_patch>
@@ -33,19 +33,21 @@ For method_flag, use one of the following flags (default is --standard):
                    (Uses L2 regularization for stability.)
     --compare    : Compare all methods and view their R² values, exposure gains, and previews.              
                    
-  For display_path, use the flag (default is display patches):
+For display_patch, use the following flag (no flag means display patches):
   
     --no-display-patches : Do not display the color patch images (color checker detection).
-                           Only the final corrected result will be shown (such as the result image below).
+                           Only the final result will be shown.
 
+## Example Display Patch
 
+![Figure_2](https://github.com/user-attachments/assets/5442a1df-013f-446e-b8ec-02a03eda8ba3)
 
-# Result
+## Example Result
 
 In my case, LOESS takes a huge amount of time (3 hours in my case), but it is the most accurate.
 
-![Figure_1](https://github.com/user-attachments/assets/1a32a484-fbd2-4b56-8348-d660b8d688e3)
+![Figure_1](https://github.com/user-attachments/assets/08e0de3e-8d82-4d54-88b5-5d14f939a74f)
 
-# Development
+## Development
 
 I used mostly ChatGPT for this, as I have no idea how color works. So feel free to modify anything that is incorrect.
